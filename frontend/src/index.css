@@ -1,3 +1,7 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 *,
 *::before,
 *::after {
@@ -17,27 +21,7 @@ body {
   overflow-x: hidden;
 }
 
-/* Hide common browser extension injected elements */
-extension-div, .extension-placeholder, .gemini-extension, .adblock-notice {
-  display: none !important;
-}
-
-/* Prevent flex items from wrapping unexpectedly */
-
-::selection {
-  background-color: #1590fb;
-  color: white;
-}
-
-table {
-  border-collapse: separate;
-  border-spacing: 0;
-}
-
-table td {
-  vertical-align: middle;
-}
-
+/* Custom scrollbar */
 ::-webkit-scrollbar {
   width: 8px;
   height: 8px;
@@ -55,4 +39,12 @@ table td {
 
 ::-webkit-scrollbar-thumb:hover {
   background: #94a3b8;
+}
+
+/* Hide browser extension injected elements */
+.extension-div,
+.extension-placeholder,
+.gemini-extension,
+.adblock-notice {
+  display: none !important;
 }
