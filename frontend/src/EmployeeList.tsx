@@ -262,13 +262,17 @@ export default function EmployeeList({ onCreate: _onCreate, onUpdate: _onUpdate,
                       </span>
                     </td>
                     <td className="px-6 py-4">
-                      <div className="flex items-center gap-3">
+                      <div className="flex items-center gap-3 min-w-0">
                         <div className="w-8 h-8 rounded-full bg-primary-100 flex items-center justify-center flex-shrink-0">
-                          <span className="text-xs font-bold text-primary-600">
+                          <span className="text-sm font-bold text-primary-600 leading-none">
                             {emp.name.charAt(0).toUpperCase()}
                           </span>
                         </div>
-                        <span className="text-sm font-medium text-gray-900">{emp.name}</span>
+                        <div className="min-w-0">
+                          <span className="text-sm font-medium text-gray-900 block truncate">
+                            {emp.name}
+                          </span>
+                        </div>
                       </div>
                     </td>
                     <td className="px-6 py-4">

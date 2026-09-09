@@ -14,11 +14,28 @@ body {
   font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
 }
+
+/* Hide common browser extension injected elements */
+extension-div, .extension-placeholder, .gemini-extension, .adblock-notice {
+  display: none !important;
+}
+
+/* Prevent flex items from wrapping unexpectedly */
 
 ::selection {
   background-color: #1590fb;
   color: white;
+}
+
+table {
+  border-collapse: separate;
+  border-spacing: 0;
+}
+
+table td {
+  vertical-align: middle;
 }
 
 ::-webkit-scrollbar {
