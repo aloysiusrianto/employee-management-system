@@ -40,7 +40,7 @@ export default function EmployeeList({ onCreate: _onCreate, onUpdate: _onUpdate,
       if (departmentFilter !== 'all') params.set('department', departmentFilter);
       if (statusFilter !== 'all') params.set('status', statusFilter);
 
-      const res = await fetch(`${API_BASE}/employees?${params}`);
+      const res = await fetch(`${API_BASE}/api/employees?${params}`);
       if (!res.ok) throw new Error('Gagal mengambil data');
       const json = await res.json();
       setEmployees(json.data || []);
@@ -57,7 +57,7 @@ export default function EmployeeList({ onCreate: _onCreate, onUpdate: _onUpdate,
 
   const handleCreate = async (data: Partial<Employee>) => {
     try {
-      const res = await fetch(`${API_BASE}/employees`, {
+      const res = await fetch(`${API_BASE}/api/employees`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(data),
@@ -77,7 +77,7 @@ export default function EmployeeList({ onCreate: _onCreate, onUpdate: _onUpdate,
   const handleUpdate = async (data: Partial<Employee>) => {
     if (!editingEmployee) return;
     try {
-      const res = await fetch(`${API_BASE}/employees/${editingEmployee.id}`, {
+      const res = await fetch(`${API_BASE}/api/employees/${editingEmployee.id}`, {
         method: 'PUT',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(data),
@@ -97,7 +97,7 @@ export default function EmployeeList({ onCreate: _onCreate, onUpdate: _onUpdate,
   const handleDelete = async (id: string) => {
     if (!window.confirm('Yakin ingin menghapus employee ini? Tindakan tidak dapat dibatalkan.')) return;
     try {
-      const res = await fetch(`${API_BASE}/employees/${id}`, {
+      const res = await fetch(`${API_BASE}/api/employees/${id}`, {
         method: 'DELETE',
       });
       if (!res.ok) {
