@@ -6,7 +6,7 @@ export default function ApiDocumentation() {
   const [responses, setResponses] = useState<Record<string, ResponseEntry>>({});
   const [loading, setLoading] = useState<string | null>(null);
 
-  const baseUrl = typeof window !== 'undefined' ? window.location.origin : 'http://localhost:3001';
+  const baseUrl = 'https://employee-management-system-production-5480.up.railway.app';
 
   const endpoints = [
     {

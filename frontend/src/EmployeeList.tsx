@@ -12,6 +12,7 @@ import {
   UserPlus,
 } from 'lucide-react';
 import type { Employee } from './types';
+import { API_BASE } from './config';
 
 interface Props {
   onCreate: (data: Partial<Employee>) => void;
@@ -19,8 +20,6 @@ interface Props {
   onDelete: (id: string) => void;
   onView: (employee: Employee) => void;
 }
-
-const API_BASE = '/api';
 
 export default function EmployeeList({ onCreate: _onCreate, onUpdate: _onUpdate, onDelete: _onDelete, onView }: Props) {
   const [employees, setEmployees] = useState<Employee[]>([]);
